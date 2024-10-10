@@ -1,32 +1,41 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
-  </div>
+  <v-app>
+    <div>
+      <v-app-bar
+        color="deep-purple accent-4"
+        dark
+      >
+
+        <v-toolbar-title>VIIT Pune</v-toolbar-title>
+
+        <v-spacer></v-spacer>
+
+        <router-link to="/">
+          <v-btn style="margin-right: 10px;">
+            Home
+          </v-btn>
+        </router-link>
+
+        <router-link to="/login">
+          <v-btn style="margin-right: 10px;">
+            Login
+          </v-btn>
+        </router-link>
+      </v-app-bar>
+    </div>
+
+    <v-main>
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+export default {
+  name: "App",
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>
